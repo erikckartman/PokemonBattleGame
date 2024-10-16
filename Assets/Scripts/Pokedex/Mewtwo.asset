@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff0013f9beac03c4b84117399baf8434, type: 3}
+  m_Name: Mewtwo
+  m_EditorClassIdentifier: 
+  name: Mewtwo
+  maxHP: 40
+  hp: 40
+  damage: 5
+  poisoning: 0
+  level: 99
+  defence: 0
+  pokemon: {fileID: 21300000, guid: bd900033718345243a16bebd44e4b492, type: 3}
+  pokeScale: {x: 2, y: 2, z: 0}
