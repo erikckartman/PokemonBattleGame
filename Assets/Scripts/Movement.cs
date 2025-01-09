@@ -1,68 +1,48 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Callbacks;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class Movement : MonoBehaviour
 {
     public float gridSize;
+    private float speed = 5f;
     public Animator animator;
 
     public float timeWalk;
     public float buttonHold;
+    [SerializeField] private float inputX;
+    [SerializeField] private float inputY;
 
     void Start()
     {
         timeWalk = Random.Range(0f, 10f);
     }
 
-    void Update()
+    private void Update()
     {
-        Vector3 newPosition = transform.position;
+        inputX = Input.GetAxisRaw("Horizontal");
+        inputY = Input.GetAxisRaw("Vertical");
 
-        if (Input.GetKey(KeyCode.W))
+        transform.position += new Vector3(inputX, inputY, 0) * speed * Time.deltaTime;
+
+        if(inputX == 0 && inputY == 0)
         {
-            animator.Play("GoUp");
-            transform.position += Vector3.up * gridSize;
-            transform.localScale = new Vector3(3f, transform.localScale.y, transform.localScale.z);
+            animator.SetBool("IsGoing", false);
         }
-        else if (Input.GetKey(KeyCode.S))
+        else
         {
-            animator.Play("GoDown");
-            transform.position += Vector3.down * gridSize;
-            transform.localScale = new Vector3(3f, transform.localScale.y, transform.localScale.z);
+            animator.SetBool("IsGoing", true);
         }
-        else if (Input.GetKey(KeyCode.A))
+
+        if(inputX > 0)
         {
-            animator.Play("GoRight");
-            transform.position += Vector3.left * gridSize;
-            transform.localScale = new Vector3(-3f, transform.localScale.y, transform.localScale.z);
+            transform.localScale = new Vector3(4, 4, 1);
         }
-        else if (Input.GetKey(KeyCode.D))
+        else if(inputX < 0)
         {
-            animator.Play("GoRight");
-            transform.position += Vector3.right * gridSize;
-            transform.localScale = new Vector3(3f, transform.localScale.y, transform.localScale.z);
-        }
-        else if (Input.GetKeyUp(KeyCode.S))
-        {
-            animator.Play("Stay");
-            transform.localScale = new Vector3(3f, transform.localScale.y, transform.localScale.z);
-        }
-        else if(Input.GetKeyUp(KeyCode.A))
-        {
-            animator.Play("StayRight");
-            transform.localScale = new Vector3(-3f, transform.localScale.y, transform.localScale.z);
-        }
-        else if (Input.GetKeyUp(KeyCode.D)) 
-        {
-            animator.Play("StayRight");
-            transform.localScale = new Vector3(3f, transform.localScale.y, transform.localScale.z);
-        }
-        else if( Input.GetKeyUp(KeyCode.W))
-        {
-            animator.Play("StayUp");
-            transform.localScale = new Vector3(3f, transform.localScale.y, transform.localScale.z);
+            transform.localScale = new Vector3(-4, 4, 1);
         }
 
         if(Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D))
