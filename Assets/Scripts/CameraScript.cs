@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Camera : MonoBehaviour
+public class CameraScript : MonoBehaviour
 {
     public Transform player; 
     public SpriteRenderer boundsSprite; 
@@ -10,18 +10,17 @@ public class Camera : MonoBehaviour
     private float minX, maxX, minY, maxY;
     private float camHalfWidth, camHalfHeight;
 
-    public float farY = 19f;
-    public float closeY = -14f;
-    public float farX = 23f;
-    public float closeX = -26f;
 
     void Start()
     {      
         Bounds bounds = boundsSprite.bounds;
-        minX = bounds.min.x + camHalfWidth;
-        maxX = bounds.max.x - camHalfWidth;
-        minY = bounds.min.y + camHalfHeight;
-        maxY = bounds.max.y - camHalfHeight;
+        float camHeight = Camera.main.orthographicSize * 2; 
+        float camWidth = camHeight * Camera.main.aspect;
+
+        minX = bounds.min.x + camWidth / 2;
+        maxX = bounds.max.x - camWidth / 2;
+        minY = bounds.min.y + camHeight / 2;
+        maxY = bounds.max.y - camHeight / 2;
     }
 
     void LateUpdate()

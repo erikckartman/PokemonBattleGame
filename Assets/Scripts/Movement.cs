@@ -6,24 +6,32 @@ using UnityEngine.SceneManagement;
 
 public class Movement : MonoBehaviour
 {
-    public float gridSize;
-    private float speed = 5f;
-    public Animator animator;
+    [SerializeField] private float speed;
+    [SerializeField] private Animator animator;
+    private float size;
 
-    public float timeWalk;
-    public float buttonHold;
-    [SerializeField] private float inputX;
-    [SerializeField] private float inputY;
+    public SpriteRenderer boundsSprite;
+    private float minX, maxX, minY, maxY;
 
-    void Start()
+    private void Start()
     {
-        timeWalk = Random.Range(0f, 10f);
+        size = transform.localScale.x;
+
+        if (boundsSprite != null)
+        {
+            Bounds bounds = boundsSprite.bounds;
+
+            minX = bounds.min.x;
+            maxX = bounds.max.x;
+            minY = bounds.min.y;
+            maxY = bounds.max.y;
+        }
     }
 
     private void Update()
     {
-        inputX = Input.GetAxisRaw("Horizontal");
-        inputY = Input.GetAxisRaw("Vertical");
+        float inputX = Input.GetAxisRaw("Horizontal");
+        float inputY = Input.GetAxisRaw("Vertical");
 
         transform.position += new Vector3(inputX, inputY, 0) * speed * Time.deltaTime;
 
@@ -38,25 +46,21 @@ public class Movement : MonoBehaviour
 
         if(inputX > 0)
         {
-            transform.localScale = new Vector3(4, 4, 1);
+            transform.localScale = new Vector3(size, size, 1);
         }
         else if(inputX < 0)
         {
-            transform.localScale = new Vector3(-4, 4, 1);
+            transform.localScale = new Vector3(-size, size, 1);
         }
 
-        if(Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D))
-        {
-            buttonHold += Time.deltaTime;
-            if(buttonHold >= timeWalk)
-            {
-                SceneManager.LoadScene("Arena");
-                buttonHold = 0;
-            }
-        }
-        else
-        {
-            buttonHold = 0;
-        }
+        
+    }
+
+    private void LateUpdate()
+    {
+        float clampedX = Mathf.Clamp(transform.position.x, minX, maxX);
+        float clampedY = Mathf.Clamp(transform.position.y, minY, maxY);
+
+        transform.position = new Vector3(clampedX, clampedY, transform.position.z);
     }
 }
