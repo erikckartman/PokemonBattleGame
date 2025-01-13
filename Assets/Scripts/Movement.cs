@@ -7,14 +7,17 @@ using UnityEngine.SceneManagement;
 public class Movement : MonoBehaviour
 {
     [SerializeField] private float speed;
-    [SerializeField] private Animator animator;
+    [SerializeField] private AnimScript animScript;
+    
     private float size;
+    private NPCScript npcScript;
 
     public SpriteRenderer boundsSprite;
     private float minX, maxX, minY, maxY;
 
     private void Start()
     {
+        npcScript = GetComponent<NPCScript>();
         size = transform.localScale.x;
 
         if (boundsSprite != null)
@@ -37,11 +40,11 @@ public class Movement : MonoBehaviour
 
         if(inputX == 0 && inputY == 0)
         {
-            animator.SetBool("IsGoing", false);
+            animScript.stateInt = 1;
         }
         else
         {
-            animator.SetBool("IsGoing", true);
+            animScript.stateInt = 2;
         }
 
         if(inputX > 0)

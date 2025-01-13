@@ -10,6 +10,7 @@ public class DialogueSystem : MonoBehaviour
     [SerializeField] private GameObject textBox;
     private float speedText = 0.06f;
     private int index;
+    [HideInInspector]public bool talkAnim = false;
 
     private void Start()
     {
@@ -36,6 +37,7 @@ public class DialogueSystem : MonoBehaviour
             textBox.SetActive(true);
             if (lines.Length > 0)
             {
+                talkAnim = true;
                 index = 0;
                 dialogueText.text = string.Empty;
                 StartCoroutine(TypeLine());
@@ -89,6 +91,7 @@ public class DialogueSystem : MonoBehaviour
         }
         else
         {
+            talkAnim = false;
             textBox.SetActive(false);
             lines = null;
         }

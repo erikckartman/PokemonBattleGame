@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8131991909231255114}
   - component: {fileID: 6929092187391031299}
+  - component: {fileID: 3728863829865439891}
   - component: {fileID: 7051650247807484507}
   - component: {fileID: 932347201405360282}
   - component: {fileID: 3151402930724326736}
@@ -89,6 +90,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &3728863829865439891
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1158990856466463213}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba9fd0de7d640c64aac4af04ecf1a1c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stateInt: 1
+  animator: {fileID: 3151402930724326736}
 --- !u!114 &7051650247807484507
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -101,9 +116,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4e580a0082eb2642b1031b1d50ec4e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  characters: []
   dialogueSystem: {fileID: 0}
-  name: 
-  dialogueWithPeter: []
+  animScript: {fileID: 0}
+  characterName: 
+  isTalking: 0
 --- !u!114 &932347201405360282
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -117,7 +134,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 2
-  animator: {fileID: 3151402930724326736}
+  animScript: {fileID: 0}
   boundsSprite: {fileID: 0}
 --- !u!95 &3151402930724326736
 Animator:

@@ -1514,6 +1514,7 @@ MonoBehaviour:
   lines: []
   dialogueText: {fileID: 1055398929}
   textBox: {fileID: 144012358}
+  talkAnim: 0
 --- !u!1 &1650718378
 GameObject:
   m_ObjectHideFlags: 0
@@ -1623,11 +1624,38 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 3956573997504950202, guid: 12afdfe85c7d2ad499fad0787acaecdb, type: 3}
   m_PrefabInstance: {fileID: 5072735029045491560}
   m_PrefabAsset: {fileID: 0}
+--- !u!95 &1764373635 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 7510035759607041732, guid: 12afdfe85c7d2ad499fad0787acaecdb, type: 3}
+  m_PrefabInstance: {fileID: 5072735029045491560}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1764373640 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 768954325125940031, guid: 12afdfe85c7d2ad499fad0787acaecdb, type: 3}
+  m_PrefabInstance: {fileID: 5072735029045491560}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1764373632}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba9fd0de7d640c64aac4af04ecf1a1c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1937044619 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1158990856466463213, guid: 0cb68d8f53f7c9445b7b1784069ea240, type: 3}
   m_PrefabInstance: {fileID: 6214139326162260336}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1937044627 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3728863829865439891, guid: 0cb68d8f53f7c9445b7b1784069ea240, type: 3}
+  m_PrefabInstance: {fileID: 6214139326162260336}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1937044619}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba9fd0de7d640c64aac4af04ecf1a1c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2095637080
 GameObject:
   m_ObjectHideFlags: 0
@@ -1786,6 +1814,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2151436865246759368, guid: af23a6e616f80ff48869bde564845a8b, type: 3}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 1303468333325283821}
     - target: {fileID: 2843427086418383988, guid: af23a6e616f80ff48869bde564845a8b, type: 3}
       propertyPath: m_IsTrigger
       value: 0
@@ -1795,6 +1827,10 @@ PrefabInstance:
       value: Peter
       objectReference: {fileID: 0}
     - target: {fileID: 4067237467710602543, guid: af23a6e616f80ff48869bde564845a8b, type: 3}
+      propertyPath: animScript
+      value: 
+      objectReference: {fileID: 1303468333325283827}
+    - target: {fileID: 4067237467710602543, guid: af23a6e616f80ff48869bde564845a8b, type: 3}
       propertyPath: characterName
       value: Peter
       objectReference: {fileID: 0}
@@ -1802,6 +1838,38 @@ PrefabInstance:
       propertyPath: dialogueSystem
       value: 
       objectReference: {fileID: 1568431281}
+    - target: {fileID: 4067237467710602543, guid: af23a6e616f80ff48869bde564845a8b, type: 3}
+      propertyPath: characters.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4067237467710602543, guid: af23a6e616f80ff48869bde564845a8b, type: 3}
+      propertyPath: characters.Array.data[0].characterName
+      value: Steewie
+      objectReference: {fileID: 0}
+    - target: {fileID: 4067237467710602543, guid: af23a6e616f80ff48869bde564845a8b, type: 3}
+      propertyPath: characters.Array.data[0].dialoguesWithOtherCharacters.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4067237467710602543, guid: af23a6e616f80ff48869bde564845a8b, type: 3}
+      propertyPath: characters.Array.data[0].dialoguesWithOtherCharacters.Array.data[0].characterName
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4067237467710602543, guid: af23a6e616f80ff48869bde564845a8b, type: 3}
+      propertyPath: characters.Array.data[0].dialoguesWithOtherCharacters.Array.data[0].dialogues.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4067237467710602543, guid: af23a6e616f80ff48869bde564845a8b, type: 3}
+      propertyPath: characters.Array.data[0].dialoguesWithOtherCharacters.Array.data[0].dialogues.Array.data[0]
+      value: Hello, my child!
+      objectReference: {fileID: 0}
+    - target: {fileID: 4067237467710602543, guid: af23a6e616f80ff48869bde564845a8b, type: 3}
+      propertyPath: characters.Array.data[0].dialoguesWithOtherCharacters.Array.data[0].dialogues.Array.data[1]
+      value: Fuck you!
+      objectReference: {fileID: 0}
+    - target: {fileID: 7494504732936728472, guid: af23a6e616f80ff48869bde564845a8b, type: 3}
+      propertyPath: animScript
+      value: 
+      objectReference: {fileID: 1303468333325283827}
     - target: {fileID: 7494504732936728472, guid: af23a6e616f80ff48869bde564845a8b, type: 3}
       propertyPath: boundsSprite
       value: 
@@ -1816,6 +1884,22 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1586658927163893905, guid: af23a6e616f80ff48869bde564845a8b, type: 3}
   m_PrefabInstance: {fileID: 1303468333325283814}
   m_PrefabAsset: {fileID: 0}
+--- !u!95 &1303468333325283821 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 1045219626865283221, guid: af23a6e616f80ff48869bde564845a8b, type: 3}
+  m_PrefabInstance: {fileID: 1303468333325283814}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1303468333325283827 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2151436865246759368, guid: af23a6e616f80ff48869bde564845a8b, type: 3}
+  m_PrefabInstance: {fileID: 1303468333325283814}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1216580064}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba9fd0de7d640c64aac4af04ecf1a1c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &5072735029045491560
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1824,6 +1908,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 768954325125940031, guid: 12afdfe85c7d2ad499fad0787acaecdb, type: 3}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 1764373635}
     - target: {fileID: 2605935647837891592, guid: 12afdfe85c7d2ad499fad0787acaecdb, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1.11
@@ -1869,6 +1957,10 @@ PrefabInstance:
       value: Steewie
       objectReference: {fileID: 0}
     - target: {fileID: 3395802693414883388, guid: 12afdfe85c7d2ad499fad0787acaecdb, type: 3}
+      propertyPath: animScript
+      value: 
+      objectReference: {fileID: 1764373640}
+    - target: {fileID: 3395802693414883388, guid: 12afdfe85c7d2ad499fad0787acaecdb, type: 3}
       propertyPath: characterName
       value: Peter
       objectReference: {fileID: 0}
@@ -1877,8 +1969,12 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1568431281}
     - target: {fileID: 3395802693414883388, guid: 12afdfe85c7d2ad499fad0787acaecdb, type: 3}
+      propertyPath: characters.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3395802693414883388, guid: 12afdfe85c7d2ad499fad0787acaecdb, type: 3}
       propertyPath: dialogueWithPeter.Array.size
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3395802693414883388, guid: 12afdfe85c7d2ad499fad0787acaecdb, type: 3}
       propertyPath: dialogueWithPeter.Array.data[0]
@@ -1891,6 +1987,62 @@ PrefabInstance:
     - target: {fileID: 3395802693414883388, guid: 12afdfe85c7d2ad499fad0787acaecdb, type: 3}
       propertyPath: dialogueWithPeter.Array.data[2]
       value: Sosi huy
+      objectReference: {fileID: 0}
+    - target: {fileID: 3395802693414883388, guid: 12afdfe85c7d2ad499fad0787acaecdb, type: 3}
+      propertyPath: characters.Array.data[0].characterName
+      value: Peter
+      objectReference: {fileID: 0}
+    - target: {fileID: 3395802693414883388, guid: 12afdfe85c7d2ad499fad0787acaecdb, type: 3}
+      propertyPath: characters.Array.data[0].dialogues.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3395802693414883388, guid: 12afdfe85c7d2ad499fad0787acaecdb, type: 3}
+      propertyPath: characters.Array.data[0].dialogueProgress.progress
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3395802693414883388, guid: 12afdfe85c7d2ad499fad0787acaecdb, type: 3}
+      propertyPath: characters.Array.data[0].dialogues.Array.data[0].text.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3395802693414883388, guid: 12afdfe85c7d2ad499fad0787acaecdb, type: 3}
+      propertyPath: characters.Array.data[0].dialogues.Array.data[1].text.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3395802693414883388, guid: 12afdfe85c7d2ad499fad0787acaecdb, type: 3}
+      propertyPath: characters.Array.data[0].dialoguesWithOtherCharacters.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3395802693414883388, guid: 12afdfe85c7d2ad499fad0787acaecdb, type: 3}
+      propertyPath: characters.Array.data[0].dialogues.Array.data[0].text.Array.data[0]
+      value: Hello, my child
+      objectReference: {fileID: 0}
+    - target: {fileID: 3395802693414883388, guid: 12afdfe85c7d2ad499fad0787acaecdb, type: 3}
+      propertyPath: characters.Array.data[0].dialogues.Array.data[0].text.Array.data[1]
+      value: Fuck you, fat faggot!
+      objectReference: {fileID: 0}
+    - target: {fileID: 3395802693414883388, guid: 12afdfe85c7d2ad499fad0787acaecdb, type: 3}
+      propertyPath: characters.Array.data[0].dialogues.Array.data[1].text.Array.data[0]
+      value: How are you, my child?
+      objectReference: {fileID: 0}
+    - target: {fileID: 3395802693414883388, guid: 12afdfe85c7d2ad499fad0787acaecdb, type: 3}
+      propertyPath: characters.Array.data[0].dialogues.Array.data[1].text.Array.data[1]
+      value: I gonna kill you
+      objectReference: {fileID: 0}
+    - target: {fileID: 3395802693414883388, guid: 12afdfe85c7d2ad499fad0787acaecdb, type: 3}
+      propertyPath: characters.Array.data[0].dialoguesWithOtherCharacters.Array.data[0].characterName
+      value: Peter
+      objectReference: {fileID: 0}
+    - target: {fileID: 3395802693414883388, guid: 12afdfe85c7d2ad499fad0787acaecdb, type: 3}
+      propertyPath: characters.Array.data[0].dialoguesWithOtherCharacters.Array.data[0].dialogues.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3395802693414883388, guid: 12afdfe85c7d2ad499fad0787acaecdb, type: 3}
+      propertyPath: characters.Array.data[0].dialoguesWithOtherCharacters.Array.data[0].dialogues.Array.data[0]
+      value: Hello, my child
+      objectReference: {fileID: 0}
+    - target: {fileID: 3395802693414883388, guid: 12afdfe85c7d2ad499fad0787acaecdb, type: 3}
+      propertyPath: characters.Array.data[0].dialoguesWithOtherCharacters.Array.data[0].dialogues.Array.data[1]
+      value: Fuck you, fat
       objectReference: {fileID: 0}
     - target: {fileID: 3956573997504950202, guid: 12afdfe85c7d2ad499fad0787acaecdb, type: 3}
       propertyPath: m_Name
@@ -1908,6 +2060,10 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5653878180714533631, guid: 12afdfe85c7d2ad499fad0787acaecdb, type: 3}
+      propertyPath: animScript
+      value: 
+      objectReference: {fileID: 1764373640}
     - target: {fileID: 5653878180714533631, guid: 12afdfe85c7d2ad499fad0787acaecdb, type: 3}
       propertyPath: boundsSprite
       value: 
@@ -1934,6 +2090,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 932347201405360282, guid: 0cb68d8f53f7c9445b7b1784069ea240, type: 3}
+      propertyPath: animScript
+      value: 
+      objectReference: {fileID: 1937044627}
+    - target: {fileID: 932347201405360282, guid: 0cb68d8f53f7c9445b7b1784069ea240, type: 3}
       propertyPath: boundsSprite
       value: 
       objectReference: {fileID: 2095637081}
@@ -1954,6 +2114,10 @@ PrefabInstance:
       value: Roger
       objectReference: {fileID: 0}
     - target: {fileID: 7051650247807484507, guid: 0cb68d8f53f7c9445b7b1784069ea240, type: 3}
+      propertyPath: animScript
+      value: 
+      objectReference: {fileID: 1937044627}
+    - target: {fileID: 7051650247807484507, guid: 0cb68d8f53f7c9445b7b1784069ea240, type: 3}
       propertyPath: characterName
       value: Peter
       objectReference: {fileID: 0}
@@ -1961,6 +2125,34 @@ PrefabInstance:
       propertyPath: dialogueSystem
       value: 
       objectReference: {fileID: 1568431281}
+    - target: {fileID: 7051650247807484507, guid: 0cb68d8f53f7c9445b7b1784069ea240, type: 3}
+      propertyPath: characters.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7051650247807484507, guid: 0cb68d8f53f7c9445b7b1784069ea240, type: 3}
+      propertyPath: characters.Array.data[0].characterName
+      value: Peter
+      objectReference: {fileID: 0}
+    - target: {fileID: 7051650247807484507, guid: 0cb68d8f53f7c9445b7b1784069ea240, type: 3}
+      propertyPath: characters.Array.data[0].dialogues.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7051650247807484507, guid: 0cb68d8f53f7c9445b7b1784069ea240, type: 3}
+      propertyPath: characters.Array.data[0].dialogues.Array.data[0].text.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7051650247807484507, guid: 0cb68d8f53f7c9445b7b1784069ea240, type: 3}
+      propertyPath: characters.Array.data[0].dialogues.Array.data[0].text.Array.data[0]
+      value: What are you want?
+      objectReference: {fileID: 0}
+    - target: {fileID: 7051650247807484507, guid: 0cb68d8f53f7c9445b7b1784069ea240, type: 3}
+      propertyPath: characters.Array.data[0].dialogues.Array.data[0].text.Array.data[1]
+      value: I don't know yet
+      objectReference: {fileID: 0}
+    - target: {fileID: 7051650247807484507, guid: 0cb68d8f53f7c9445b7b1784069ea240, type: 3}
+      propertyPath: characters.Array.data[0].dialogues.Array.data[0].text.Array.data[2]
+      value: So why'd you back off?
+      objectReference: {fileID: 0}
     - target: {fileID: 8131991909231255114, guid: 0cb68d8f53f7c9445b7b1784069ea240, type: 3}
       propertyPath: m_LocalPosition.x
       value: 3.25

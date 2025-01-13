@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1586658927163893905}
   - component: {fileID: 1350648819898136604}
+  - component: {fileID: 2151436865246759368}
   - component: {fileID: 4067237467710602543}
   - component: {fileID: 2843427086418383988}
   - component: {fileID: 6292061632809050777}
@@ -89,6 +90,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &2151436865246759368
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1115518892757437252}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba9fd0de7d640c64aac4af04ecf1a1c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stateInt: 1
+  animator: {fileID: 0}
 --- !u!114 &4067237467710602543
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -101,9 +116,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4e580a0082eb2642b1031b1d50ec4e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  characters: []
   dialogueSystem: {fileID: 0}
-  name: 
-  dialogueWithPeter: []
+  animScript: {fileID: 0}
+  characterName: 
+  isTalking: 0
 --- !u!61 &2843427086418383988
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -189,7 +206,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
-  animator: {fileID: 1045219626865283221}
+  animScript: {fileID: 0}
   boundsSprite: {fileID: 0}
 --- !u!95 &1045219626865283221
 Animator:
