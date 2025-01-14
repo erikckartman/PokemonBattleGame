@@ -8,25 +8,17 @@ public class PlayerSwap : MonoBehaviour
     [SerializeField] private GameObject[] playerList;
     [SerializeField] private CameraScript camera;
     private int playerIndex = 0;
+    [SerializeField] private NPCScript[] npcScripts; 
 
     private void Start()
     {
-        for (int i = 0; i < playerList.Length; i++)
-        {
-            if (i == playerIndex)
-            {
-                playerList[i].GetComponent<Movement>().enabled = true;
-                playerList[i].gameObject.tag = "Player";
-            }
-            else
-            {
-                playerList[i].GetComponent<Movement>().enabled = false;
-                playerList[i].gameObject.tag = "NPC";
-            }
-        }
+        npcScripts = FindObjectsOfType<NPCScript>();
+
+        UpdateActivePlayer();
     }
     private void Update()
     {
+
         if (Input.GetKeyDown(KeyCode.Q))
         {          
             if(playerIndex < playerList.Length - 1)
@@ -39,20 +31,28 @@ public class PlayerSwap : MonoBehaviour
             }
 
             camera.player = playerList[playerIndex].transform;
+            UpdateActivePlayer();
+        }        
+    }
 
-            for (int i = 0; i < playerList.Length; i++)
+    private void UpdateActivePlayer()
+    {
+        for (int i = 0; i < playerList.Length; i++)
+        {
+            if (i == playerIndex)
             {
-                if(i  == playerIndex)
+                playerList[i].GetComponent<Movement>().enabled = true;
+                playerList[i].gameObject.tag = "Player";
+                foreach (NPCScript npc in npcScripts)
                 {
-                    playerList[i].GetComponent<Movement>().enabled = true;
-                    playerList[i].gameObject.tag = "Player";
-                }
-                else
-                {
-                    playerList[i].GetComponent<Movement>().enabled = false;
-                    playerList[i].gameObject.tag = "NPC";
+                    npc.player = playerList[i];
                 }
             }
+            else
+            {
+                playerList[i].GetComponent<Movement>().enabled = false;
+                playerList[i].gameObject.tag = "NPC";
+            }
         }
-    }    
+    }
 }

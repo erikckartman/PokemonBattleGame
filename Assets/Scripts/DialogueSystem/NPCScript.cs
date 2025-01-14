@@ -9,20 +9,49 @@ public class NPCScript : MonoBehaviour
     [SerializeField] private AnimScript animScript;
 
     [SerializeField] private string characterName;
-    private GameObject player;
+    public GameObject player;
     [HideInInspector]public bool isTalking = false;
-
-    private void Awake()
-    {
-        UpdatePlayer();
-    }
+    public float distance;
 
     private void Update()
-    {
-
-        if (Input.GetKeyDown(KeyCode.Q))
+    {              
+        if (player != null && gameObject.tag == "NPC")
         {
-            UpdatePlayer();
+            float distanceToPlayer = Vector3.Distance(player.transform.position, transform.position);
+            distance = distanceToPlayer;
+
+            if (distanceToPlayer <= 1f)
+            {
+                if (Input.GetKeyDown(KeyCode.E))
+                {
+                    CharacterDialogue character = characters.Find(c => c.characterName == player.GetComponent<NPCScript>().characterName);
+               
+                    if (character != null)
+                    {
+                        Dialogue dialogueProgress = character.dialogues.Find(d => d.progress == LevelSystems.progress);
+
+                        if (dialogueProgress != null)
+                        {
+
+                            Dialogue dialogue = character.dialogues[dialogueProgress.progress];
+                            dialogueSystem.lines = dialogue.text;
+                            dialogueSystem.StartDialogue();
+                        }
+                        else
+                        {
+                            Debug.LogError($"{dialogueProgress} is null");
+                        }
+                    }
+                    else
+                    {
+                        Debug.LogError($"{character} is null");
+                    }
+                }
+            }
+            else
+            {
+                isTalking = false;
+            }
         }
 
         if (dialogueSystem.talkAnim)
@@ -32,74 +61,22 @@ public class NPCScript : MonoBehaviour
         }
         else
         {
-            animScript.stateInt = 1;
-        }
-
-        if (player != null && gameObject.tag == "NPC")
-        {
-            float distanceToPlayer = Vector3.Distance(player.transform.position, transform.position);
-
-            if (distanceToPlayer <= 1f)
+            if(gameObject.tag == "NPC")
             {
-                if (Input.GetKeyDown(KeyCode.E))
-                {
-                    CharacterDialogue character = GetCharacterDialogue(characterName);
-
-                    if (character != null)
-                    {
-                        DialogueProgress dialogueProgress = GetDialogueProgress(character);
-
-                        if (dialogueProgress != null)
-                        {
-                            
-                            if (dialogueProgress.progress < character.dialogues.Count)
-                            {
-                                Dialogue dialogue = character.dialogues[dialogueProgress.progress];
-                                dialogueSystem.lines = dialogue.text;
-                                dialogueSystem.StartDialogue();
-
-                                dialogueProgress.progress++;
-                            }
-                            else
-                            {
-
-                                Debug.Log($"No more dialogues with {characterName}.");
-                            }
-                        }
-                    }
-                }
+                animScript.stateInt = 1;
             }
             else
             {
-                isTalking = false;
+                return;
             }
         }
     }
 
-    private void UpdatePlayer()
-    {
-        player = GameObject.FindGameObjectWithTag("Player");
-    }
-
-    private CharacterDialogue GetCharacterDialogue(string characterName)
-    {
-        return characters.Find(c => c.characterName == characterName);
-    }
-
-    private DialogueProgress GetDialogueProgress(CharacterDialogue character)
-    {
-        return character.dialogueProgress;
-    }
 
     [System.Serializable]
     public class Dialogue
     {
         public string[] text;
-    }
-
-    [System.Serializable]
-    public class DialogueProgress
-    {
         public int progress = 0;
     }
 
@@ -108,6 +85,5 @@ public class NPCScript : MonoBehaviour
     {
         public string characterName;
         public List<Dialogue> dialogues;
-        public DialogueProgress dialogueProgress;
     }
 }

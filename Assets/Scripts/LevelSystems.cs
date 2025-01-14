@@ -21,6 +21,11 @@ public class LevelSystems : MonoBehaviour
             pauseAct = !pauseAct;
         }
 
+        if (Input.GetKeyDown(KeyCode.Z))
+        {
+            progress++;
+        }
+
         progUI.text = "Progress: " + progress;
     }
 

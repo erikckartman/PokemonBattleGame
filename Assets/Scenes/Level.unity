@@ -1499,6 +1499,7 @@ MonoBehaviour:
   - {fileID: 1764373632}
   - {fileID: 1937044619}
   camera: {fileID: 519420033}
+  npcScripts: []
 --- !u!114 &1568431281
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1840,7 +1841,7 @@ PrefabInstance:
       objectReference: {fileID: 1568431281}
     - target: {fileID: 4067237467710602543, guid: af23a6e616f80ff48869bde564845a8b, type: 3}
       propertyPath: characters.Array.size
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4067237467710602543, guid: af23a6e616f80ff48869bde564845a8b, type: 3}
       propertyPath: characters.Array.data[0].characterName
@@ -1962,7 +1963,7 @@ PrefabInstance:
       objectReference: {fileID: 1764373640}
     - target: {fileID: 3395802693414883388, guid: 12afdfe85c7d2ad499fad0787acaecdb, type: 3}
       propertyPath: characterName
-      value: Peter
+      value: Steewie
       objectReference: {fileID: 0}
     - target: {fileID: 3395802693414883388, guid: 12afdfe85c7d2ad499fad0787acaecdb, type: 3}
       propertyPath: dialogueSystem
@@ -2001,12 +2002,16 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3395802693414883388, guid: 12afdfe85c7d2ad499fad0787acaecdb, type: 3}
+      propertyPath: characters.Array.data[0].dialogues.Array.data[1].progress
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3395802693414883388, guid: 12afdfe85c7d2ad499fad0787acaecdb, type: 3}
       propertyPath: characters.Array.data[0].dialogues.Array.data[0].text.Array.size
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3395802693414883388, guid: 12afdfe85c7d2ad499fad0787acaecdb, type: 3}
       propertyPath: characters.Array.data[0].dialogues.Array.data[1].text.Array.size
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3395802693414883388, guid: 12afdfe85c7d2ad499fad0787acaecdb, type: 3}
       propertyPath: characters.Array.data[0].dialoguesWithOtherCharacters.Array.size
@@ -2022,11 +2027,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3395802693414883388, guid: 12afdfe85c7d2ad499fad0787acaecdb, type: 3}
       propertyPath: characters.Array.data[0].dialogues.Array.data[1].text.Array.data[0]
-      value: How are you, my child?
+      value: Why're you still here?
       objectReference: {fileID: 0}
     - target: {fileID: 3395802693414883388, guid: 12afdfe85c7d2ad499fad0787acaecdb, type: 3}
       propertyPath: characters.Array.data[0].dialogues.Array.data[1].text.Array.data[1]
-      value: I gonna kill you
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 3395802693414883388, guid: 12afdfe85c7d2ad499fad0787acaecdb, type: 3}
       propertyPath: characters.Array.data[0].dialoguesWithOtherCharacters.Array.data[0].characterName
@@ -2119,7 +2124,7 @@ PrefabInstance:
       objectReference: {fileID: 1937044627}
     - target: {fileID: 7051650247807484507, guid: 0cb68d8f53f7c9445b7b1784069ea240, type: 3}
       propertyPath: characterName
-      value: Peter
+      value: Roger
       objectReference: {fileID: 0}
     - target: {fileID: 7051650247807484507, guid: 0cb68d8f53f7c9445b7b1784069ea240, type: 3}
       propertyPath: dialogueSystem
@@ -2127,18 +2132,34 @@ PrefabInstance:
       objectReference: {fileID: 1568431281}
     - target: {fileID: 7051650247807484507, guid: 0cb68d8f53f7c9445b7b1784069ea240, type: 3}
       propertyPath: characters.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7051650247807484507, guid: 0cb68d8f53f7c9445b7b1784069ea240, type: 3}
       propertyPath: characters.Array.data[0].characterName
       value: Peter
       objectReference: {fileID: 0}
     - target: {fileID: 7051650247807484507, guid: 0cb68d8f53f7c9445b7b1784069ea240, type: 3}
+      propertyPath: characters.Array.data[1].characterName
+      value: Steewie
+      objectReference: {fileID: 0}
+    - target: {fileID: 7051650247807484507, guid: 0cb68d8f53f7c9445b7b1784069ea240, type: 3}
       propertyPath: characters.Array.data[0].dialogues.Array.size
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7051650247807484507, guid: 0cb68d8f53f7c9445b7b1784069ea240, type: 3}
+      propertyPath: characters.Array.data[1].dialogues.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7051650247807484507, guid: 0cb68d8f53f7c9445b7b1784069ea240, type: 3}
       propertyPath: characters.Array.data[0].dialogues.Array.data[0].text.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7051650247807484507, guid: 0cb68d8f53f7c9445b7b1784069ea240, type: 3}
+      propertyPath: characters.Array.data[1].dialogues.Array.data[0].text.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7051650247807484507, guid: 0cb68d8f53f7c9445b7b1784069ea240, type: 3}
+      propertyPath: characters.Array.data[1].dialogues.Array.data[1].text.Array.size
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7051650247807484507, guid: 0cb68d8f53f7c9445b7b1784069ea240, type: 3}
@@ -2151,6 +2172,34 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7051650247807484507, guid: 0cb68d8f53f7c9445b7b1784069ea240, type: 3}
       propertyPath: characters.Array.data[0].dialogues.Array.data[0].text.Array.data[2]
+      value: So why'd you back off?
+      objectReference: {fileID: 0}
+    - target: {fileID: 7051650247807484507, guid: 0cb68d8f53f7c9445b7b1784069ea240, type: 3}
+      propertyPath: characters.Array.data[1].dialogues.Array.data[0].text.Array.data[0]
+      value: Hello, Steewie!
+      objectReference: {fileID: 0}
+    - target: {fileID: 7051650247807484507, guid: 0cb68d8f53f7c9445b7b1784069ea240, type: 3}
+      propertyPath: characters.Array.data[1].dialogues.Array.data[0].text.Array.data[1]
+      value: Hello!
+      objectReference: {fileID: 0}
+    - target: {fileID: 7051650247807484507, guid: 0cb68d8f53f7c9445b7b1784069ea240, type: 3}
+      propertyPath: characters.Array.data[1].dialogues.Array.data[0].text.Array.data[2]
+      value: Do you want to play this evening?
+      objectReference: {fileID: 0}
+    - target: {fileID: 7051650247807484507, guid: 0cb68d8f53f7c9445b7b1784069ea240, type: 3}
+      propertyPath: characters.Array.data[1].dialogues.Array.data[0].text.Array.data[3]
+      value: Fuck you, faggot!!!
+      objectReference: {fileID: 0}
+    - target: {fileID: 7051650247807484507, guid: 0cb68d8f53f7c9445b7b1784069ea240, type: 3}
+      propertyPath: characters.Array.data[1].dialogues.Array.data[1].text.Array.data[0]
+      value: What are you want?
+      objectReference: {fileID: 0}
+    - target: {fileID: 7051650247807484507, guid: 0cb68d8f53f7c9445b7b1784069ea240, type: 3}
+      propertyPath: characters.Array.data[1].dialogues.Array.data[1].text.Array.data[1]
+      value: I don't know yet
+      objectReference: {fileID: 0}
+    - target: {fileID: 7051650247807484507, guid: 0cb68d8f53f7c9445b7b1784069ea240, type: 3}
+      propertyPath: characters.Array.data[1].dialogues.Array.data[1].text.Array.data[2]
       value: So why'd you back off?
       objectReference: {fileID: 0}
     - target: {fileID: 8131991909231255114, guid: 0cb68d8f53f7c9445b7b1784069ea240, type: 3}
